@@ -1,0 +1,36 @@
+
+
+模仿自动售货机。计算美元和硬币的数量
+
+要求以美元、50美分、20美分、10美分和5美分表示给定的变动金额
+
+硬币。例如，9.85美元将是9美元、1 x 50美分、1 x 20美分和1 x 5美分的硬币。然后修改它，这样它也可以打印出1美元和2美元硬币的数字
+
+import java.util.Scanner;
+
+public class Main {
+    public static int count=0;
+    public static void dfs(int[] a,int n,int m) {
+        if(n==0) {
+            count++;
+            return;
+        }
+        if(n<0) {
+            return;
+        }
+        for(int i=m;i<5;i++) {
+            int m1=i;
+            dfs(a,n-a[i],m1);
+        }
+    }
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] a= {5,20,50};
+        dfs(a,n,0);
+        System.out.println(count);
+    }
+
+}
+

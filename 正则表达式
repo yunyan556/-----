@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+    public static int count=0;
+    public static void dfs(int[] a,int n,int m) {
+        if(n==0) {
+            count++;
+            return;
+        }
+        if(n<0) {
+            return;
+        }
+        for(int i=m;i<5;i++) {
+            int m1=i;
+            dfs(a,n-a[i],m1);
+        }
+    }
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] a= {1,5,10,25,50};
+        dfs(a,n,0);
+        System.out.println(count);
+    }
+
+}

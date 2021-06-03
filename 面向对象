@@ -1,0 +1,57 @@
+
+a） 创建一个名为Student的类，用私有字段记录
+
+姓名、电话号码和学生号码。添加构造函数
+
+接受姓名，电话号码和学生号码。b） 添加一个名为displayStudent（）的实例方法，该方法打印所有
+
+这些值。c） 使用main（）方法创建一个单独的测试驱动程序
+
+例示你自己作为一个学生和你的另一个学生
+
+选择。打印这些对象的详细信息。
+
+public class Student {
+
+private String name;
+private String number;
+private int score;
+public Student() {
+}
+public Student(String name, String number, int score) {
+super();
+this.name = name;
+this.number = number;
+this.score = score;
+}
+public String getName() {
+return name;
+}
+public void setName(String name) {
+this.name = name;
+}
+public String getNumber() {
+return number;
+}
+public void setNumber(String number) {
+this.number = number;
+}
+public int getScore() {
+return score;
+}
+public void setScore(int score) {
+this.score = score;
+}
+public String toString() {
+return "Name: " + name
++ ",Number: " + number
++ ",Score : " + score;
+}
+//调用方法
+public static void main(String[] args) {
+Student s = new Student("Jack","123456",98);
+System.out.println(s.toString());
+}
+
+}
+
